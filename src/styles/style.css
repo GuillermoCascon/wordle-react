@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+    -webkit-text-stroke: 0.1px;
+    font-family: 'Lato' sans-serif;
+}
+:root{
+    --black0 : #000;
+    --black1 : #222;
+    --black2 : #4f4d4a;
+    --white0: #fff; 
+    --white1: #eee;
+    --white2: #dbd4c7;
+    --colorOverLight:#4f4d4a;
+    --colorOverDark:#e5a735;
+    
+    --box:#f3cd89;
+    --box2: #fffdfb;
+}
+/* THEMES */
+[data-theme='Dark']{
+    --background: var(--black0);
+    --background: var(--black1);
+    --text1: var(--white0);
+    --text2: var(--white2);
+}
+[data-theme='Light']{
+    --background: var(--white0);
+    --background: var(--white1);
+    --text1: var(--black0);
+    --text2: var(--black2);
+
+}
+/* END THEMES */
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    background-color: var(--background);
+}
+footer{
+    height: 50px;
+}
+
+
+/* SUPPORT CLASSES */
+.button{
+    padding: 0.5em 1em;
+    border: none;
+    text-decoration: none;
+    border-radius: 0.25em;
+}
+.button-primary{
+    border: 2px solid var(--background2);
+    color: var(--background2);
+}
+.button-secondary{
+
+}
+.page-container{
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7em;
+}
+/* END SUPPORT CLASSES */
+/* HOME PAGE */
+.home-page-container h1{
+    font-size: 4em; 
+    font-weight: bolder;
+    color: var(--text1);
+}
+.home-page-container input{
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -3px var(--background2);
+}
+.home-page-container input::placeholder{
+    letter-spacing: 2px;
+    text-align: center;
+}
+.home-page-container p{}
+.home-page-container input{}
+/* END HOME PAGE */
+
+/* WORDLE CLASSES */
+.game-page-container{
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3em;
+}
+.button-new-game{
+    
+}
+.wordle-container{
+    height: inherit;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: fit-content;
+    align-self: center;
+}
+.game-container{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.game-row{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.gamebox{
+    border-color: var(--background2);
+    width: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px 2px black;
+    font-weight: bolder;
+    aspect-ratio: 1;
+}
+.gameboard-container{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    margin-bottom: 2em;
+    padding: 1em;
+}
+.keyboard{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.25em;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+.keyboard-row{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5em;
+    justify-content: center;
+    gap: 0.25em;
+}
+.keyboard-key{
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px 2px black;
+    font-weight: bolder;
+    -webkit-user-select: none;
+    user-select: none;
+    aspect-ratio: 1;
+}
+.keyboard-key:hover{
+    filter: brightness(150%);
+}
+.keyboard-key:active{
+    transform: scale(0.9);
+}
+.keyboard-key-delete{
+}
+.keyboard-key-enter{
+}
+/* END WORDLE CLASSES */
+/* MEDIA QUERIES */
+/* MOBILE */
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    p.info-media-queries::after{
+        content: 'mobile';
+    }
+}
+/* MOBILE LANDSCAPE */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    p.info-media-queries::after{
+        content: 'mobile lanscape';
+    }
+}
+/* TABLET */
+@media only screen and (min-width: 768px) and (max-width: 979px){
+    p.info-media-queries::after{
+        content: 'tablet';
+    }
+}
+/* SMALL DESKTOP */
+@media only screen and (min-width: 980px) and (max-width: 1023px){
+    p.info-media-queries::after{
+        content: 'small desktop';
+    }
+}
+/* BASIC DESKTOP */
+@media only screen and (min-width: 1024px) and (max-width: 1199px){
+    p.info-media-queries::after{
+        content: 'basic desktop';
+    }
+}
+/* LARGE DESKTOP */
+@media only screen and (min-width: 1200px){
+    p.info-media-queries::after{
+        content: 'large desktop';
+    }
+}
+/* END MEDIA QUERIES */
